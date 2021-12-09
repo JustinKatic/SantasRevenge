@@ -3,7 +3,12 @@ guid: 82cf43e6a72a7464ca6ce0d53bc8959d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Reindeer
+    second: {fileID: 2100000, guid: 04500d02321e7904da0e492e86a8ef71, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
