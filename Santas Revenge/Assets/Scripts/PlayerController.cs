@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDir;
     Animator anim;
 
+    public GameObject model;
+
     [SerializeField] private float dodgeCooldown = 3f;
     private bool canDodge = true;
 
@@ -35,7 +37,25 @@ public class PlayerController : MonoBehaviour
 
             StartCoroutine(DodgeCooldown());
         }
+
+        //Get the Screen positions of the object
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+
+        //Get the Screen position of the mouse
+        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+        //Get the angle between the points
+        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+
+        //Ta Daaa
+        model.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle, 0f));
     }
+
+    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
 
     IEnumerator DodgeCooldown()
     {
@@ -44,3 +64,4 @@ public class PlayerController : MonoBehaviour
         canDodge = true;
     }
 }
+
