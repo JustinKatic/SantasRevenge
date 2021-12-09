@@ -16,13 +16,14 @@ public class Health : MonoBehaviour
     }
 
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealh = Mathf.Clamp(currentHealh - damage, 0, maxHealth);
 
         if (currentHealh <= 0)
         {
-            Death();
+            anim.Play("Death");
+            Invoke("Death", 1f);
         }
     }
 
@@ -33,7 +34,7 @@ public class Health : MonoBehaviour
 
     void Death()
     {
-        anim.Play("Death");
+        Destroy(gameObject);
     }
 
 
