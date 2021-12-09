@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 10f;
-    Vector3 input;
+    Vector3 moveDir;
     Animator anim;
 
     private void Start()
@@ -16,14 +16,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        transform.position += input * speed * Time.deltaTime;
+        moveDir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        transform.position += moveDir * speed * Time.deltaTime;
 
-        anim.SetFloat("X", input.x, 0.2f, Time.deltaTime);
+        anim.SetFloat("X", moveDir.x, 0.2f, Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            anim.Play("roll");
+            if (moveDir.x < 0)
+                anim.Play("RollLeft");
+            else if (moveDir.x > 0)
+                anim.Play("RollRight");
+            else
+                anim.Play("Duck");
         }
     }
 }
