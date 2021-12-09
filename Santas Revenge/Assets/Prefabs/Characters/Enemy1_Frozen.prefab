@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2653531280896798847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0008339882, y: 0.43482375, z: 0}
-  m_LocalScale: {x: 1.1836, y: 2.4011693, z: 1.1836}
+  m_LocalPosition: {x: -0.0008339882, y: 0.736, z: 0}
+  m_LocalScale: {x: 0.60719985, y: 0.76566935, z: 0.60719985}
   m_Children: []
   m_Father: {fileID: 9187200023131332913}
   m_RootOrder: 1
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7bc516e4059e8044d835c8c0456ae5a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: -5331133491034649070}
   - component: {fileID: -5548756730899629133}
   m_Layer: 7
-  m_Name: Enemy1 1
+  m_Name: Enemy1_Frozen
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
