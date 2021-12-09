@@ -15,6 +15,14 @@ public class Shootin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+    }
+
+    public void Shoot()
+    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitData;
 
@@ -27,10 +35,7 @@ public class Shootin : MonoBehaviour
             worldPosition = ray.GetPoint(range);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            GameObject spawnedProj = Instantiate(objectToShoot, projectileSpawnPoint.position, Quaternion.identity);
-            spawnedProj.GetComponent<Rigidbody>().velocity = (worldPosition - projectileSpawnPoint.position).normalized * bulletSpeed;
-        }
+        GameObject spawnedProj = Instantiate(objectToShoot, projectileSpawnPoint.position, Quaternion.identity);
+        spawnedProj.GetComponent<Rigidbody>().velocity = (worldPosition - projectileSpawnPoint.position).normalized * bulletSpeed;
     }
 }
