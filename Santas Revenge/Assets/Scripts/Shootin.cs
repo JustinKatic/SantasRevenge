@@ -7,7 +7,10 @@ public class Shootin : MonoBehaviour
     Vector3 worldPosition;
     float range = 1000f;
     public float bulletSpeed = 100f;
-    [SerializeField] GameObject objectToShoot;
+    public float shotsPerSecond = 10f;
+    float lastFired;
+    
+    private GameObject objectToShoot;
 
     [SerializeField] Transform projectileSpawnPoint;
     public LayerMask layerToIgnore;
@@ -15,9 +18,13 @@ public class Shootin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButton("Fire1"))
         {
-            Shoot();
+            if (Time.time - lastFired > 1 / shotsPerSecond)
+            {
+                lastFired = Time.time;
+                Shoot();
+            }
         }
     }
 
