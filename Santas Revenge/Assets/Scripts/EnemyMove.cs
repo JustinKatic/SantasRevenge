@@ -15,11 +15,11 @@ public class EnemyMove : MonoBehaviour
     float dist;
     private int defaultSpeed;
 
-    bool Slowed = false;
 
     private void OnEnable()
     {
         closeToPlayer = false;
+        agent.speed = defaultSpeed;
         rampDestIndex = Random.Range(0, rampDestinations.Length);
         agent.enabled = true;
         agent.SetDestination(rampDestinations[rampDestIndex].transform.position);
