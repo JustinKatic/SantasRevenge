@@ -8,12 +8,13 @@ public class ExplosiveBullet : MonoBehaviour
     public int damageAmount = 100;
     public float radius = 5.0f;
     public float explosionForce = 10000.0f;
+    public LayerMask enemyLayer;
 
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemyLayer);
 
 
         foreach (Collider nearbyObject in colliders)

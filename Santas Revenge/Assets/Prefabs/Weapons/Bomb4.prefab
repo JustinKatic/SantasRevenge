@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5897320054311056279}
   - component: {fileID: -5052602281399789787}
   m_Layer: 0
-  m_Name: present6
+  m_Name: Bomb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,3 +128,6 @@ MonoBehaviour:
   damageAmount: 100
   radius: 5
   explosionForce: 1000
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
