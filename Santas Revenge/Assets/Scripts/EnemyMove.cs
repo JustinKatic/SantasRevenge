@@ -13,6 +13,9 @@ public class EnemyMove : MonoBehaviour
 
     bool closeToPlayer = false;
     float dist;
+    private int defaultSpeed;
+
+    bool Slowed = false;
 
     private void OnEnable()
     {
@@ -26,6 +29,7 @@ public class EnemyMove : MonoBehaviour
     {
         rampDestinations = GameObject.FindGameObjectsWithTag("RampPos");
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        defaultSpeed = (int)agent.speed;
     }
 
     private void Update()
@@ -41,6 +45,10 @@ public class EnemyMove : MonoBehaviour
         else
             if (agent.enabled)
             agent.SetDestination(player.position);
+    }
 
+    public void SlowSpeed(float slowSpeed)
+    {
+        agent.speed = slowSpeed;
     }
 }
