@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Rigidbody rb;
-    [SerializeField] float objectSpeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        rb.AddForce(transform.forward * objectSpeed);
-    }
+    [SerializeField] float damage;
 
     private void OnCollisionEnter(Collision collision)
     {
+        Health health = collision.gameObject.GetComponent<Health>();
+
+        if (health != null)
+        {
+            PerformAbility(health);
+        }
+
         Destroy(this.gameObject);
     }
 
+    protected virtual void PerformAbility(Health health)
+    {
+
+    }
 }
