@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDir;
     Animator anim;
 
+    [SerializeField] private float dodgeCooldown = 3f;
+    private bool canDodge = true;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -21,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("X", moveDir.x, 0.2f, Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (canDodge && Input.GetKeyDown(KeyCode.Space))
         {
             if (moveDir.x < 0)
                 anim.Play("RollLeft");
@@ -29,6 +32,15 @@ public class PlayerController : MonoBehaviour
                 anim.Play("RollRight");
             else
                 anim.Play("Duck");
+
+            StartCoroutine(DodgeCooldown());
         }
+    }
+
+    IEnumerator DodgeCooldown()
+    {
+        canDodge = false;
+        yield return new WaitForSeconds(dodgeCooldown);
+        canDodge = true;
     }
 }
