@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField]List<GameObject> projectiles;
+    [SerializeField] List<GameObject> projectiles;
     private GameObject currentProjectile;
     private GameObject nextProjectile;
     private void Start()
     {
-        if (projectiles != null)
-            currentProjectile = projectiles[Random.Range(0, projectiles.Count - 1)];
-
         SetNextProjectile();
+
+        if (projectiles != null)
+            currentProjectile = projectiles[Random.Range(0, projectiles.Count)];
+
     }
 
     public GameObject GetCurrentProjectile()
@@ -20,17 +21,13 @@ public class Inventory : MonoBehaviour
         return currentProjectile;
     }
 
-    private GameObject GetNextProjectile()
-    {
-        return nextProjectile;
-    }
 
-    private void SetNextProjectile()
+    public void SetNextProjectile()
     {
         currentProjectile = nextProjectile;
 
-        if(projectiles != null)
-            nextProjectile = projectiles[Random.Range(0, projectiles.Count - 1)];
+        if (projectiles != null)
+            nextProjectile = projectiles[Random.Range(0, projectiles.Count)];
 
     }
 

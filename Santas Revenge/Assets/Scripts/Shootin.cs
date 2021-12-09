@@ -9,12 +9,16 @@ public class Shootin : MonoBehaviour
     public float bulletSpeed = 100f;
     public float shotsPerSecond = 10f;
     float lastFired;
-    
-    private GameObject objectToShoot;
+
+    Inventory inventory;
 
     [SerializeField] Transform projectileSpawnPoint;
     public LayerMask layerToIgnore;
 
+    private void Awake()
+    {
+        inventory = GetComponent<Inventory>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -42,7 +46,9 @@ public class Shootin : MonoBehaviour
             worldPosition = ray.GetPoint(range);
         }
 
-        GameObject spawnedProj = Instantiate(objectToShoot, projectileSpawnPoint.position, Quaternion.identity);
+        GameObject spawnedProj = Instantiate(inventory.GetCurrentProjectile(), projectileSpawnPoint.position, Quaternion.identity);
         spawnedProj.GetComponent<Rigidbody>().velocity = (worldPosition - projectileSpawnPoint.position).normalized * bulletSpeed;
+
+        inventory.SetNextProjectile();
     }
 }
