@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4448234080226527538}
   - component: {fileID: -5331133491034649070}
   - component: {fileID: -5548756730899629133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  waveDataSO: {fileID: 11400000, guid: 0940d8708f66a7d4c84807a610a5f833, type: 2}
 --- !u!136 &-5331133491034649070
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

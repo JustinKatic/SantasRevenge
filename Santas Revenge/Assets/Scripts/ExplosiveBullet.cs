@@ -29,6 +29,7 @@ public class ExplosiveBullet : MonoBehaviour
 
             if (rb != null && health != null)
             {
+                rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 health.TakeDamage(damageAmount);

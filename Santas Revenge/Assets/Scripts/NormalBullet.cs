@@ -7,10 +7,9 @@ public class NormalBullet : MonoBehaviour
     public int damageAmount = 1;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.layer == 7)
         {
             other.GetComponent<Health>().TakeDamage(damageAmount);
-
         }
         Destroy(gameObject);
     }

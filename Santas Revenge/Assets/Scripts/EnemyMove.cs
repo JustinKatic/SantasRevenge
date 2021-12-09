@@ -18,6 +18,7 @@ public class EnemyMove : MonoBehaviour
     {
         closeToPlayer = false;
         rampDestIndex = Random.Range(0, rampDestinations.Length);
+        agent.enabled = true;
         agent.SetDestination(rampDestinations[rampDestIndex].transform.position);
     }
 

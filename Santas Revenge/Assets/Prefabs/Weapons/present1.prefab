@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 100
   radius: 5
-  explosionForce: 10000
+  explosionForce: 1000

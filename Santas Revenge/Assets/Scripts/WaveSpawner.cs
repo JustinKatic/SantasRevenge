@@ -27,7 +27,7 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] float m_timeBetweenWaves = 5f;
     private float m_waveCountdown;
 
-    [SerializeField] int m_numberOfActiveEnemies;
+    public WaveDataSO waveDataSO;
 
     //  [Header("EVENTS")]
     //  [SerializeField] GameEvent m_waveCompletedEvent;
@@ -48,6 +48,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         //   m_currentWaveTxt.text = m_waves[m_nextWaveNum].m_name;
+        waveDataSO.ActiveEnemies = 0;
         m_waveCountdown = m_timeBetweenWaves;
     }
 
@@ -96,6 +97,7 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             m_nextWaveNum++;
+            waveDataSO.ActiveEnemies = 0;
             //    m_currentWaveTxt.text = m_waves[m_nextWaveNum].m_name;
             Debug.Log("Waves complete");
         }
@@ -108,7 +110,7 @@ public class WaveSpawner : MonoBehaviour
         {
             m_searchCountdown = 1f;
 
-            if (m_numberOfActiveEnemies <= 0)
+            if (waveDataSO.ActiveEnemies <= 0)
             {
                 return true;
             }
@@ -136,13 +138,14 @@ public class WaveSpawner : MonoBehaviour
         int randSpawnPoint = Random.Range(0, spawnPoints.Length - 1);
         Transform _sp = spawnPoints[randSpawnPoint].transform;
 
-        Instantiate(a_enemy, _sp.transform.position, _sp.transform.rotation);
-        m_numberOfActiveEnemies += 1;
+        GameObject enemy = ObjectPooler.SharedInstance.GetPooledObject(a_enemy.tag);
+        enemy.transform.position = _sp.transform.position;
+        enemy.transform.rotation = _sp.transform.rotation;
+        enemy.SetActive(true);
+        waveDataSO.ActiveEnemies += 1;
 
         m_currentEnemy++;
         if (m_currentEnemy >= spawnPoints.Length)
             m_currentEnemy = 0;
     }
-
-
 }
