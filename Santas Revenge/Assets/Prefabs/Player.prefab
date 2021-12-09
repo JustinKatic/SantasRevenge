@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5302329546819692305}
   - component: {fileID: 5302329546819692307}
   - component: {fileID: 5302329546819692304}
+  - component: {fileID: 8676198705732394998}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 100
-  objectToShoot: {fileID: 3250394078062569237, guid: 6fcaf94efaf30604f8c7237601244e3d, type: 3}
+  shotsPerSecond: 10
   projectileSpawnPoint: {fileID: 5302329546748012593}
   layerToIgnore:
     serializedVersion: 2
@@ -140,6 +141,25 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8676198705732394998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302329546819692300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b2c2049fee03a47a57182d3fe3e15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectiles:
+  - {fileID: 6389366329951583335, guid: d541f24bda59ea4478ffa888b4d16807, type: 3}
+  - {fileID: 4494566478787104498, guid: 88588bd4e9ed342459689d481dabab1b, type: 3}
+  - {fileID: 5744334230969613740, guid: 454a6751489e9a648bdd0f30d820c316, type: 3}
+  - {fileID: 3993103993206703891, guid: 5e368394e448e2d4597d72d7eb30d8f1, type: 3}
+  - {fileID: 5450605412797231242, guid: 7575927138ca7374187df84e4d013f38, type: 3}
+  - {fileID: 4694939656363818949, guid: b742eb6dd6557b046a0aa87d157fba3c, type: 3}
 --- !u!1 &5302329547117312027
 GameObject:
   m_ObjectHideFlags: 0
