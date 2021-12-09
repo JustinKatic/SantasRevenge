@@ -28,8 +28,6 @@ public class Shoot : MonoBehaviour
         GameObject spawnedProjectile;
         spawnedProjectile = Instantiate(objectToShoot, projectileSpawnPoint.position, Quaternion.identity);
         spawnedProjectile.transform.LookAt(aimPos);
-
-
     }
 
     private void GetMousePos()
