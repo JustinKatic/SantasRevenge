@@ -9,6 +9,8 @@ public class ExplosiveBullet : MonoBehaviour
     public float radius = 5.0f;
     public float explosionForce = 10000.0f;
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
@@ -29,7 +31,7 @@ public class ExplosiveBullet : MonoBehaviour
             {
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-                //health.TakeDamage(damageAmount);
+                health.TakeDamage(damageAmount);
             }
         }
 

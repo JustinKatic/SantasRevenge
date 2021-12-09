@@ -38,6 +38,7 @@ public class EnemyMove : MonoBehaviour
             }
         }
         else
+            if (agent.enabled)
             agent.SetDestination(player.position);
 
     }

@@ -22,7 +22,8 @@ public class Health : MonoBehaviour
 
         if (currentHealh <= 0)
         {
-            Death();
+            anim.Play("Death");
+            Invoke("Death", 1f);
         }
     }
 
@@ -33,7 +34,6 @@ public class Health : MonoBehaviour
 
     void Death()
     {
-        anim.Play("Death");
         Destroy(gameObject);
     }
 
