@@ -18,19 +18,27 @@ public class PlayerController : MonoBehaviour
     private Camera mainCamera;
 
     Vector3 input;
+    Vector2 mouseInput;
+
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
+
 
 
     // Update is called once per frame
     void Update()
     {
         input = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        mouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+
         transform.position += input * speed * Time.deltaTime;
+        CameraRotation();
     }
 
     void RotatePlayerToFaceCamDirection()
     {
-        if (!cameraRotation)
-            return;
         //set the players rotation to the direction of the camera with a slerp smoothness
         float yawCamera = mainCamera.transform.rotation.eulerAngles.y;
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), RotationSpeed * Time.deltaTime);
@@ -48,8 +56,8 @@ public class PlayerController : MonoBehaviour
         // if there is an input and camera position is not fixed
         if (input.sqrMagnitude >= 0.01)
         {
-            _cinemachineTargetYaw += playerLookInput.x * MouseSensitivity * Time.deltaTime;
-            _cinemachineTargetPitch += playerLookInput.y * MouseSensitivity * Time.deltaTime;
+            _cinemachineTargetYaw += mouseInput.x * MouseSensitivity * Time.deltaTime;
+            _cinemachineTargetPitch += mouseInput.y * MouseSensitivity * Time.deltaTime;
         }
 
         // clamp our rotations so our values are limited 360 degrees
