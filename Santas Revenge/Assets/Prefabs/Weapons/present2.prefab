@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 197001009904786413}
   - component: {fileID: 2692893187010490151}
   - component: {fileID: 3942707106554964607}
+  - component: {fileID: -2245527513501141353}
+  - component: {fileID: 7708479351824883558}
   m_Layer: 0
   m_Name: present2
   m_TagString: Untagged
@@ -98,3 +100,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2245527513501141353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494566478787104498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f1bc55e069729448743576fc37653e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 1
+--- !u!65 &7708479351824883558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4494566478787104498}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.43915546, y: 0.51026165, z: 0.436354}
+  m_Center: {x: -0.000028274953, y: 0.03553407, z: 0.0009150505}

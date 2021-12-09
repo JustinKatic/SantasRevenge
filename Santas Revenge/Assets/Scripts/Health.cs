@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     }
 
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealh = Mathf.Clamp(currentHealh - damage, 0, maxHealth);
 
@@ -34,6 +34,7 @@ public class Health : MonoBehaviour
     void Death()
     {
         anim.Play("Death");
+        Destroy(gameObject);
     }
 
 
