@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
 
 
     private Animator anim;
+    private bool burning = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -44,6 +46,7 @@ public class Health : MonoBehaviour
         if (currentHealh <= 0)
         {
             dead = true;
+            burning = false;
             waveDataSO.ActiveEnemies--;
             //anim.Play("Death");
             Invoke("Death", 1f);
@@ -61,12 +64,16 @@ public class Health : MonoBehaviour
     }
     public void Burn(float waitTime, int damage)
     {
+        burning = true;
         StartCoroutine(BurnBaby(waitTime, damage));
     }
 
     IEnumerator BurnBaby(float waitTime, int damage)
     {
-        yield return new WaitForSeconds(waitTime);
-        TakeDamage(damage);
+        while (burning)
+        {
+            yield return new WaitForSeconds(waitTime);
+            TakeDamage(damage);
+        }
     }
 }
