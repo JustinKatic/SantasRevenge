@@ -12,6 +12,7 @@ public class NormalBullet : MonoBehaviour
     public float waitTime = 3f;
     public float explosionForce = 1000.0f;
     public int explosionDamageAmount = 100;
+    public GameObject explosionPrefab;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -44,7 +45,7 @@ public class NormalBullet : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
-                //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 health.TakeDamage(damageAmount, 1f);
             }
         }

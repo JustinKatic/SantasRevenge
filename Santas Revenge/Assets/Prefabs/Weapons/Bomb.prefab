@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2467293729306985227}
   - component: {fileID: -4934206283894152956}
   m_Layer: 0
-  m_Name: Bomb2
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,3 +131,4 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  explosionPrefab: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
