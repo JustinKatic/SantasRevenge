@@ -22,8 +22,6 @@ public class Health : MonoBehaviour
 
     public GameObject fire;
 
-    public GameObject redSpark;
-    public GameObject greenSpark;
 
 
 
@@ -34,8 +32,6 @@ public class Health : MonoBehaviour
 
     private void OnEnable()
     {
-        redSpark.SetActive(false);
-        greenSpark.SetActive(false);
         rb.isKinematic = true;
         currentHealh = maxHealth;
         dead = false;
