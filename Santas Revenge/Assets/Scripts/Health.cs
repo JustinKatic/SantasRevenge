@@ -17,6 +17,8 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool burning = false;
 
+    public GameObject fire;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -70,6 +72,7 @@ public class Health : MonoBehaviour
 
     IEnumerator BurnBaby(float waitTime, int damage)
     {
+        fire.SetActive(true);
         while (burning)
         {
             yield return new WaitForSeconds(waitTime);

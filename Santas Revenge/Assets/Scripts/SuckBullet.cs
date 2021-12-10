@@ -9,6 +9,9 @@ public class SuckBullet : MonoBehaviour
     private new Rigidbody rigidbody;
     public LayerMask enemy;
     public float waitTime = 1f;
+    public float explosionForce = 10000.0f;
+    public int damageAmount = 100;
+
 
     private void Awake()
     {
@@ -39,6 +42,25 @@ public class SuckBullet : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         Destroy(gameObject);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius, enemy);
+        foreach (Collider nearbyObject in colliders)
+        {
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
 
+            Health health = nearbyObject.GetComponent<Health>();
+
+
+            NavMeshAgent nav = nearbyObject.GetComponent<NavMeshAgent>();
+            if (nav != null)
+                nav.enabled = false;
+
+            if (rb != null && health != null)
+            {
+                rb.isKinematic = false;
+                rb.AddExplosionForce(explosionForce, transform.position, radius);
+                //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                health.TakeDamage(damageAmount);
+            }
+        }
     }
 }
