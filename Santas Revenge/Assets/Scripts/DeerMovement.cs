@@ -14,6 +14,8 @@ public class DeerMovement : MonoBehaviour
 
     bool closeToPlayer = false;
 
+    Health health;
+
 
     private void OnEnable()
     {
@@ -25,6 +27,8 @@ public class DeerMovement : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         positionBehindPlayer = GameObject.FindGameObjectWithTag("DeerFlyPos");
+        health = GetComponent<Health>();
+
     }
     void Update()
     {
