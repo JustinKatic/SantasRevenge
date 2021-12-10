@@ -50,6 +50,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Death()
     {
-        gameObject.SetActive(false);
+       Debug.Log("I Deaded");
     }
 }
