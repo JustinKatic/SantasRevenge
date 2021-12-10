@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4874486852079998130}
   - component: {fileID: 1622566717211840092}
   m_Layer: 0
-  m_Name: Bomb1
+  m_Name: Burn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burnDamage: 1
   radius: 5
-  explosionForce: 1000
-  enemyLayer:
+  burnRate: 0.5
+  enemy:
     serializedVersion: 2
     m_Bits: 128

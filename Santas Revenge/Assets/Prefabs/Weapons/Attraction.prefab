@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5456098681987506659}
   - component: {fileID: -1394970175934292481}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: Attraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,9 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0ec93680fbd7b49aaa9d7049b00a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 100
   radius: 5
-  explosionForce: 1000
-  enemyLayer:
+  enemy:
     serializedVersion: 2
     m_Bits: 128
