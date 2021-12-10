@@ -7,7 +7,7 @@ public class LoadGameScene : MonoBehaviour
 {
     private void Start()
     {
-        Invoke("NextScene", 17f);
+        Invoke("NextScene", 16.5f);
     }
     void NextScene()
     {
