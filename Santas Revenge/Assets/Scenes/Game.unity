@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4072,5 +4072,33 @@ PrefabInstance:
       propertyPath: currentPresentTxt
       value: 
       objectReference: {fileID: 1014087406}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.data[0]
+      value: 
+      objectReference: {fileID: 6389366329951583335, guid: d541f24bda59ea4478ffa888b4d16807, type: 3}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.data[1]
+      value: 
+      objectReference: {fileID: 5744334230969613740, guid: 454a6751489e9a648bdd0f30d820c316, type: 3}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.data[2]
+      value: 
+      objectReference: {fileID: 3993103993206703891, guid: 5e368394e448e2d4597d72d7eb30d8f1, type: 3}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.data[3]
+      value: 
+      objectReference: {fileID: 5450605412797231242, guid: 7575927138ca7374187df84e4d013f38, type: 3}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.data[4]
+      value: 
+      objectReference: {fileID: 4694939656363818949, guid: b742eb6dd6557b046a0aa87d157fba3c, type: 3}
+    - target: {fileID: 8676198705732394998, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
+      propertyPath: projectiles.Array.data[5]
+      value: 
+      objectReference: {fileID: 4494566478787104498, guid: 88588bd4e9ed342459689d481dabab1b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}

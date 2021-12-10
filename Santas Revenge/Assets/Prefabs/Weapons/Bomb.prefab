@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4876108270176394674}
   - component: {fileID: -448852155749991162}
   - component: {fileID: 5456098681987506659}
-  - component: {fileID: -4556582267251545060}
+  - component: {fileID: -1394970175934292481}
   m_Layer: 0
-  m_Name: present1
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43915546, y: 0.51026165, z: 0.436354}
   m_Center: {x: -0.000028274953, y: 0.03553407, z: 0.0009150505}
---- !u!114 &-4556582267251545060
+--- !u!114 &-1394970175934292481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6389366329951583335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791dde98271dbd1458feffda7d616544, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f0ec93680fbd7b49aaa9d7049b00a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 100
   radius: 5
-  explosionForce: 1000
+  explosionForce: 10

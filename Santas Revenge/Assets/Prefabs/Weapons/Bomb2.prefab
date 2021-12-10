@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3200553677851469510}
   - component: {fileID: -3801942498769812692}
   - component: {fileID: -2467293729306985227}
-  - component: {fileID: 584432063858880582}
+  - component: {fileID: -4934206283894152956}
   m_Layer: 0
-  m_Name: present4
+  m_Name: Bomb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43915546, y: 0.51026165, z: 0.436354}
   m_Center: {x: -0.000028274953, y: 0.03553407, z: 0.0009150505}
---- !u!114 &584432063858880582
+--- !u!114 &-4934206283894152956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,4 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 100
   radius: 5
-  explosionForce: 1000
+  explosionForce: 10000
