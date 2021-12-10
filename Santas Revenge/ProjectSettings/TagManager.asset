@@ -7,6 +7,9 @@ TagManager:
   - RampPos
   - Enemy
   - DeerFlyPos
+  - FxTemporaire
+  - GreenSpark
+  - RedSpark
   layers:
   - Default
   - TransparentFX
