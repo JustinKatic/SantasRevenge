@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 4448234080226527538}
   - component: {fileID: -5331133491034649070}
   - component: {fileID: -5548756730899629133}
+  - component: {fileID: -5788741087136164162}
   m_Layer: 7
   m_Name: Enemy Elf
   m_TagString: EnemyElf
@@ -243,6 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   waveDataSO: {fileID: 11400000, guid: 0940d8708f66a7d4c84807a610a5f833, type: 2}
+  scoreText: {fileID: 0}
   fire: {fileID: 762725908248771239}
 --- !u!136 &-5331133491034649070
 CapsuleCollider:
@@ -274,6 +276,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5788741087136164162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788041597277057130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfadc5055c6cd845ba248780a9915bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1001 &762124734254819149
 PrefabInstance:
   m_ObjectHideFlags: 0
