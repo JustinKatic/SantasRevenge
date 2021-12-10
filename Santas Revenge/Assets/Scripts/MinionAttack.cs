@@ -11,5 +11,6 @@ public class MinionAttack : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
+        Destroy(gameObject);
     }
 }
