@@ -45,8 +45,9 @@ public class Health : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, float invokeDeath)
     {
+        
         if (dead)
             return;
 
@@ -59,7 +60,7 @@ public class Health : MonoBehaviour
             waveDataSO.ActiveEnemies--;
             score.numberOfKilled++;
             //anim.Play("Death");
-            Invoke("Death", 1f);
+            Invoke("Death", invokeDeath);
             score.scoreText.text = "Kill Count: " + score.numberOfKilled;
 
         }
@@ -103,7 +104,7 @@ public class Health : MonoBehaviour
         while (burning)
         {
             yield return new WaitForSeconds(waitTime);
-            TakeDamage(damage);
+            TakeDamage(damage, 1f);
         }
     }
 }

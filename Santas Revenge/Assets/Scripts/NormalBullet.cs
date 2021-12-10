@@ -17,7 +17,7 @@ public class NormalBullet : MonoBehaviour
     {
         if (other.gameObject.layer == 7)
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(damageAmount);
+            other.gameObject.GetComponent<Health>().TakeDamage(damageAmount, 1f);
         }
         //Destroy(gameObject);
         StartCoroutine(BlowUp());
@@ -45,7 +45,7 @@ public class NormalBullet : MonoBehaviour
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-                health.TakeDamage(damageAmount);
+                health.TakeDamage(damageAmount, 1f);
             }
         }
     }
