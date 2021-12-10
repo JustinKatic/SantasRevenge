@@ -1060,8 +1060,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4715703872573064560}
   - component: {fileID: 1698322683027726090}
-  m_Layer: 0
-  m_Name: AN_DeerRun
+  m_Layer: 7
+  m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
