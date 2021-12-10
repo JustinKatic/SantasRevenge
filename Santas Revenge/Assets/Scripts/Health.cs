@@ -14,8 +14,8 @@ public class Health : MonoBehaviour
 
     public WaveDataSO waveDataSO;
 
-    public TextMeshProUGUI scoreText;
-    int numberOfKilled = 0;
+    MyScore score;
+    
 
     private Animator anim;
     private bool burning = false;
@@ -28,6 +28,7 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        score = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<MyScore>();
     }
 
     private void OnEnable()
@@ -56,10 +57,10 @@ public class Health : MonoBehaviour
             dead = true;
             burning = false;
             waveDataSO.ActiveEnemies--;
-            numberOfKilled++;
+            score.numberOfKilled++;
             //anim.Play("Death");
             Invoke("Death", 1f);
-            scoreText.text = "I have killed this many things: " + numberOfKilled;
+            score.scoreText.text = "Kill Count: " + score.numberOfKilled;
 
         }
     }
