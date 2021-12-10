@@ -22,6 +22,9 @@ public class SuckBullet : MonoBehaviour
         foreach (Collider nearbyObject in colliders)
         {
             NavMeshAgent nav = nearbyObject.GetComponent<NavMeshAgent>();
+            EnemyMove em = nearbyObject.GetComponent<EnemyMove>();
+            if (em != null)
+                em.sucking = true;
             if (nav != null && nav.enabled)
                 nav.SetDestination(transform.position);
         }
