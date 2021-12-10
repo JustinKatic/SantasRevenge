@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1757395, g: 0.21991041, b: 0.30223837, a: 1}
+  m_IndirectSpecularColor: {r: 0.17573911, g: 0.21991, b: 0.3022378, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8271,10 +8271,6 @@ PrefabInstance:
     - target: {fileID: 5302329546819692303, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
       propertyPath: RotOffset
       value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302329546819692307, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
-      propertyPath: bulletSpeed
-      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 5302329547718121892, guid: 50f4daca4cc6b67428e1638ba7d6093f, type: 3}
       propertyPath: m_RenderPostProcessing
