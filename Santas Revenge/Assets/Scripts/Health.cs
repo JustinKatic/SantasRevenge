@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 
 public class Health : MonoBehaviour
@@ -13,6 +14,8 @@ public class Health : MonoBehaviour
 
     public WaveDataSO waveDataSO;
 
+    public TextMeshProUGUI scoreText;
+    int numberOfKilled = 0;
 
     private Animator anim;
     private bool burning = false;
@@ -57,8 +60,11 @@ public class Health : MonoBehaviour
             dead = true;
             burning = false;
             waveDataSO.ActiveEnemies--;
+            numberOfKilled++;
             //anim.Play("Death");
             Invoke("Death", 1f);
+            scoreText.text = "I have killed this many things: " + numberOfKilled;
+
         }
     }
 
