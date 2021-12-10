@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
 
         //Ta Daaa
-        model.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle, 0f));
+        model.transform.rotation = Quaternion.Euler(new Vector3(0f, -angle + RotOffset, 0f));
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
