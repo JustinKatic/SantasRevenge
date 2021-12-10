@@ -60,7 +60,7 @@ public class Health : MonoBehaviour
             score.numberOfKilled++;
             //anim.Play("Death");
             Invoke("Death", 1f);
-            score.scoreText.text = "I have killed this many things: " + score.numberOfKilled;
+            score.scoreText.text = "Kill Count: " + score.numberOfKilled;
 
         }
     }

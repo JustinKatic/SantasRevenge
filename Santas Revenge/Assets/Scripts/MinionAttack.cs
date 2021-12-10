@@ -5,12 +5,17 @@ using UnityEngine;
 public class MinionAttack : MonoBehaviour
 {
     [SerializeField] private int damage;
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            PlayerHealth playerHealth = other.gameObject.GetComponentInParent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+                Destroy(gameObject);
+            }
+
         }
-        Destroy(gameObject);
     }
 }
