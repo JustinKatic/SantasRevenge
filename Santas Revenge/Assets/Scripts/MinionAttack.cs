@@ -10,7 +10,7 @@ public class MinionAttack : MonoBehaviour
         if (other.transform.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
 }
