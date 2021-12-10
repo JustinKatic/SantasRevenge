@@ -12,7 +12,7 @@ public class EnemyMove : MonoBehaviour
     Transform player;
 
     public GameObject ice;
-
+    public bool sucking = false;
 
 
     bool closeToPlayer = false;
@@ -28,6 +28,7 @@ public class EnemyMove : MonoBehaviour
         rampDestIndex = Random.Range(0, rampDestinations.Length);
         agent.enabled = true;
         agent.SetDestination(rampDestinations[rampDestIndex].transform.position);
+        sucking = false;
     }
 
     private void Awake()
@@ -48,7 +49,7 @@ public class EnemyMove : MonoBehaviour
             }
         }
         else
-            if (agent.enabled)
+            if (agent.enabled && !sucking)
             agent.SetDestination(player.position);
     }
 
