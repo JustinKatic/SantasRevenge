@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
         rb.isKinematic = true;
         currentHealh = maxHealth;
         dead = false;
+
     }
 
     private void Start()
@@ -57,6 +58,8 @@ public class Health : MonoBehaviour
         {
             dead = true;
             burning = false;
+            fire.SetActive(false);
+
             waveDataSO.ActiveEnemies--;
             score.numberOfKilled++;
             //anim.Play("Death");
