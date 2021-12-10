@@ -13,6 +13,4 @@ public class NormalBullet : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
-
 }
