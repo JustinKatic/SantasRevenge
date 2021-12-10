@@ -29,7 +29,7 @@ public class SuckBullet : MonoBehaviour
 
 
             NavMeshAgent nav = nearbyObject.GetComponent<NavMeshAgent>();
-            if (nav != null)
+            if (nav != null && nav.enabled)
                 nav.SetDestination(transform.position);
             //nav.enabled = false;
 
