@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class Health : MonoBehaviour
 {
@@ -57,4 +59,16 @@ public class Health : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void Burn(float waitTime, int damage)
+    {
+        StartCoroutine(BurnBaby(waitTime, damage));
+    }
+
+    IEnumerator BurnBaby(float waitTime, int damage)
+    {
+        yield return new WaitForSeconds(waitTime);
+        TakeDamage(damage);
+    }
+
+
 }
