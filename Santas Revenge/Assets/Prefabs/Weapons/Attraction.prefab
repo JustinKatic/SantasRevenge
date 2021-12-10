@@ -130,3 +130,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   waitTime: 5
+  explosionForce: 10000
+  damageAmount: 100
