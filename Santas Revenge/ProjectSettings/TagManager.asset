@@ -12,6 +12,7 @@ TagManager:
   - RedSpark
   - EnemyDeer
   - EnemyElf
+  - ScoreText
   layers:
   - Default
   - TransparentFX
