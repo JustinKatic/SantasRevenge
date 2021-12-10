@@ -127,4 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burnDamage: 1
   radius: 5
-  burnRate: 1
+  explosionForce: 1000
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128

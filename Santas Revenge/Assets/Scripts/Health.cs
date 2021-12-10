@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
         {
             dead = true;
             waveDataSO.ActiveEnemies--;
-            anim.Play("Death");
+            //anim.Play("Death");
             Invoke("Death", 1f);
         }
     }
