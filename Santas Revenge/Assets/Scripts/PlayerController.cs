@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dodgeCooldown = 3f;
     private bool canDodge = true;
 
+    public float RotOffset;
+
     private void Start()
     {
         anim = GetComponent<Animator>();

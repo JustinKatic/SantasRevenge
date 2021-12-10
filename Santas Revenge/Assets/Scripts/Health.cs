@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 
 public class Health : MonoBehaviour
@@ -13,11 +14,16 @@ public class Health : MonoBehaviour
 
     public WaveDataSO waveDataSO;
 
+    public TextMeshProUGUI scoreText;
+    int numberOfKilled = 0;
 
     private Animator anim;
     private bool burning = false;
 
     public GameObject fire;
+
+
+
 
     private void Awake()
     {
@@ -50,8 +56,11 @@ public class Health : MonoBehaviour
             dead = true;
             burning = false;
             waveDataSO.ActiveEnemies--;
+            numberOfKilled++;
             //anim.Play("Death");
             Invoke("Death", 1f);
+            scoreText.text = "I have killed this many things: " + numberOfKilled;
+
         }
     }
 
@@ -62,8 +71,25 @@ public class Health : MonoBehaviour
 
     void Death()
     {
+        int rand = Random.Range(0, 2);
+
+        if (rand == 0)
+        {
+            GameObject RedSpark = ObjectPooler.SharedInstance.GetPooledObject("RedSpark");
+            RedSpark.transform.position = transform.position;
+            RedSpark.SetActive(true);
+        }
+        else
+        {
+            GameObject GreenSpark = ObjectPooler.SharedInstance.GetPooledObject("GreenSpark");
+            GreenSpark.transform.position = transform.position;
+            GreenSpark.SetActive(true);
+        }
+
         gameObject.SetActive(false);
+
     }
+
     public void Burn(float waitTime, int damage)
     {
         burning = true;
