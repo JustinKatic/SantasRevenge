@@ -129,3 +129,4 @@ MonoBehaviour:
   enemy:
     serializedVersion: 2
     m_Bits: 128
+  waitTime: 5
