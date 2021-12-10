@@ -8,6 +8,7 @@ public class SuckBullet : MonoBehaviour
     public float radius = 5.0f;
     private new Rigidbody rigidbody;
     public LayerMask enemy;
+    public float waitTime = 1f;
 
     private void Awake()
     {
@@ -30,5 +31,14 @@ public class SuckBullet : MonoBehaviour
         }
         rigidbody.velocity = Vector3.zero;
         rigidbody.useGravity = true;
+
+        StartCoroutine(BlowUp());
+    }
+
+    IEnumerator BlowUp()
+    {
+        yield return new WaitForSeconds(waitTime);
+        Destroy(gameObject);
+
     }
 }
