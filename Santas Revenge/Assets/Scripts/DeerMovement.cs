@@ -10,11 +10,9 @@ public class DeerMovement : MonoBehaviour
 
     private GameObject objToMovetowards;
 
-    public GameObject positionBehindPlayer;
+    private GameObject positionBehindPlayer;
 
     bool closeToPlayer = false;
-
-    Health health;
 
 
     private void OnEnable()
@@ -27,7 +25,6 @@ public class DeerMovement : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         positionBehindPlayer = GameObject.FindGameObjectWithTag("DeerFlyPos");
-        health = GetComponent<Health>();
 
     }
     void Update()
@@ -40,6 +37,7 @@ public class DeerMovement : MonoBehaviour
             {
                 objToMovetowards = positionBehindPlayer;
                 closeToPlayer = true;
+                Destroy(gameObject, 3);
             }
         }
         transform.position = Vector3.MoveTowards(transform.position, objToMovetowards.transform.position, moveSpeed * Time.deltaTime);

@@ -19,6 +19,11 @@ public class Health : MonoBehaviour
 
     public GameObject fire;
 
+    public GameObject redSpark;
+    public GameObject greenSpark;
+
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,6 +31,8 @@ public class Health : MonoBehaviour
 
     private void OnEnable()
     {
+        redSpark.SetActive(false);
+        greenSpark.SetActive(false);
         rb.isKinematic = true;
         currentHealh = maxHealth;
         dead = false;
@@ -62,8 +69,25 @@ public class Health : MonoBehaviour
 
     void Death()
     {
+        int rand = Random.Range(0, 2);
+
+        if (rand == 0)
+        {
+            GameObject RedSpark = ObjectPooler.SharedInstance.GetPooledObject("RedSpark");
+            RedSpark.transform.position = transform.position;
+            RedSpark.SetActive(true);
+        }
+        else
+        {
+            GameObject GreenSpark = ObjectPooler.SharedInstance.GetPooledObject("GreenSpark");
+            GreenSpark.transform.position = transform.position;
+            GreenSpark.SetActive(true);
+        }
+
         gameObject.SetActive(false);
+
     }
+
     public void Burn(float waitTime, int damage)
     {
         burning = true;
