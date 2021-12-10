@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RampPos
   - Enemy
+  - DeerFlyPos
   layers:
   - Default
   - TransparentFX

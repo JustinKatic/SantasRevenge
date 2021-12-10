@@ -11,6 +11,10 @@ public class EnemyMove : MonoBehaviour
     int rampDestIndex;
     Transform player;
 
+    public GameObject ice;
+
+
+
     bool closeToPlayer = false;
     float dist;
     private int defaultSpeed;
@@ -18,6 +22,7 @@ public class EnemyMove : MonoBehaviour
 
     private void OnEnable()
     {
+        ice.SetActive(false);
         closeToPlayer = false;
         agent.speed = defaultSpeed;
         rampDestIndex = Random.Range(0, rampDestinations.Length);
@@ -49,6 +54,7 @@ public class EnemyMove : MonoBehaviour
 
     public void SlowSpeed(float slowSpeed)
     {
+        ice.SetActive(true);
         agent.speed = slowSpeed;
     }
 }
