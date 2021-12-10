@@ -9,7 +9,7 @@ public class ExplosiveBullet : MonoBehaviour
     public float radius = 5.0f;
     public float explosionForce = 10000.0f;
     public LayerMask enemyLayer;
-
+    public GameObject explosionPrefab;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -32,7 +32,7 @@ public class ExplosiveBullet : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
-                //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 health.TakeDamage(damageAmount, 1f);
             }
         }

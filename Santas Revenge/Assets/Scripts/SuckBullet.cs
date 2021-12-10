@@ -11,7 +11,7 @@ public class SuckBullet : MonoBehaviour
     public float waitTime = 1f;
     public float explosionForce = 10000.0f;
     public int damageAmount = 100;
-
+    public GameObject explosionPrefab;
 
     private void Awake()
     {
@@ -58,7 +58,7 @@ public class SuckBullet : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
-                //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 health.TakeDamage(damageAmount, 1f);
             }
         }
