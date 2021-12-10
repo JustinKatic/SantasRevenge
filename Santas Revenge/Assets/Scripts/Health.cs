@@ -69,6 +69,4 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         TakeDamage(damage);
     }
-
-
 }
