@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e81f69e2f0874346a525588b02124d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 100
+  bulletSpeed: 50
   shotsPerSecond: 2
   projectileSpawnPoint: {fileID: 5302329546748012593}
   layerToIgnore:
