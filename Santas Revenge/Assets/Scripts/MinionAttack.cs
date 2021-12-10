@@ -13,7 +13,7 @@ public class MinionAttack : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-                gameObject.GetComponent<Health>().TakeDamage(1000);
+                gameObject.GetComponent<Health>().TakeDamage(1000, 0f);
             }
 
         }

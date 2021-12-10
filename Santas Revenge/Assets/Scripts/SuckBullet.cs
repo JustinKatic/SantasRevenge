@@ -59,7 +59,7 @@ public class SuckBullet : MonoBehaviour
                 rb.isKinematic = false;
                 rb.AddExplosionForce(explosionForce, transform.position, radius);
                 //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-                health.TakeDamage(damageAmount);
+                health.TakeDamage(damageAmount, 1f);
             }
         }
     }
