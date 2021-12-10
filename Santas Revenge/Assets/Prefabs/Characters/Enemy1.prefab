@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b5ab23db00cf945959f9491c32dd8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 10
   waveDataSO: {fileID: 11400000, guid: 0940d8708f66a7d4c84807a610a5f833, type: 2}
 --- !u!136 &-5331133491034649070
 CapsuleCollider:
